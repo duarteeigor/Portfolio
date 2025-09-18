@@ -43,7 +43,7 @@ function App() {
           <span className='text-[#B86B33] text-2xl'>Desenvolvedor Front-End</span>
 
           <div className='flex gap-4 mt-4'>
-            <a href="#"><FaInstagram size={26} color='#8C4A2F' className='hover:scale-110 transition-transform' /></a>
+            <a href="https://www.instagram.com/igudduart/"><FaInstagram size={26} color='#8C4A2F' className='hover:scale-110 transition-transform' /></a>
             <a href="https://www.linkedin.com/in/igor-duarte-846626270/" target='_blank'><FaLinkedin size={26} color='#8C4A2F' className='hover:scale-110 transition-transform' /></a>
             <a href="https://api.whatsapp.com/send?phone=31996570938&text=Olá, tudo bom?" target='_blank'><FaWhatsapp size={26} color='#8C4A2F' className='hover:scale-110 transition-transform' /></a>
             <a href="https://github.com/duarteeigor" target='_blank'><FaGithub size={26} color='#8C4A2F' className='hover:scale-110 transition-transform' /></a>
