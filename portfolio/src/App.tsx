@@ -1,99 +1,118 @@
-import { useState } from 'react'
-import { Header } from './components/Header/Header'
-import Image from "./assets/image.jpeg"
-import ImageCar from "./assets/webCars.png"
+import { Header } from './components/Header/Header';
+import Image from "./assets/image.jpeg";
+import ImageWebCars from "./assets/webCars.png"
 
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 
-import { FaReact } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub, FaReact } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { RiTailwindCssFill } from "react-icons/ri";
-
+import { Card } from './components/Card/Card';
 
 function App() {
+
+  const projetos = [
+    {
+      name: "Web-Cars",
+      img: ImageWebCars,
+      link: "https://projeto-web-carros-one.vercel.app/",
+      description: "Inspiração Webmotors",
+      tech: "Vite, TypeScript, Tailwind, Supabase",
+      descriptionModal: "O projeto foi inspirado no site Webmotors. Basicamente tem uma página principal onde ficam listados os carros que foram cadastrados no banco de dados, também é possivel criar o seu próprio anúncio ao criar sua conta.Meu objetivo com a criação do site foi  praticar utilizando o supabase para armazenar os dados, autenticação e armazenamento de imagem"
+    },
+  ]
+
+  const skills = [
+    { icon: <FaReact size={60} color='#8C4A2F' />, name: "React" },
+    { icon: <SiTypescript size={60} color='#8C4A2F' />, name: "TypeScript" },
+    { icon: <IoLogoJavascript size={60} color='#8C4A2F' />, name: "JavaScript" },
+    { icon: <BiLogoPostgresql size={60} color='#8C4A2F' />, name: "Postgres" },
+    { icon: <RiTailwindCssFill size={60} color='#8C4A2F' />, name: "Tailwind" },
+  ];
+
   return (
-    <div className='bg-[#FAF3E0] '>
+    <div className='bg-[#FAF3E0] min-h-screen'>
       <Header />
 
-      <div className='max-w-7xl mx-auto w-full flex flex-col items-center'>
-
-        <img className='mt-10 w-68 h-68 rounded-full object-cover' src={Image} alt='img' />
-
-        <div className='flex flex-col items-center justify-center'>
-          <h1 className='text-[#8C4A2F] text-4xl font-bold'>Igor Duarte</h1>
+      <main className='max-w-7xl mx-auto w-full flex flex-col items-center px-4'>
+        {/* Foto e perfil */}
+        <div className='flex flex-col items-center mt-10'>
+          <img className='w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[#8C4A2F]' src={Image} alt='Foto de Igor Duarte' />
+          <h1 className='text-[#8C4A2F] text-4xl font-bold mt-4'>Igor Duarte</h1>
           <span className='text-[#B86B33] text-2xl'>Desenvolvedor Front-End</span>
 
-          <div className='flex gap-4 mt-2'>
-            <a href=""><FaInstagram size={26} color='#8C4A2F' className='hover:scale-110' /></a>
-            <a href="https://www.linkedin.com/in/igor-duarte-846626270/" target='_blank'><FaLinkedin size={26} color='#8C4A2F' className='hover:scale-110' /></a>
-            <a href="https://api.whatsapp.com/send?phone=31996570938&text=Olá, tudo bom?" target='_blank'><FaWhatsapp size={26} color='#8C4A2F' className='hover:scale-110' /></a>
-            <a href="https://github.com/duarteeigor" target='_blank'><FaGithub size={26} color='#8C4A2F' className='hover:scale-110' /></a>
+          <div className='flex gap-4 mt-4'>
+            <a href="#"><FaInstagram size={26} color='#8C4A2F' className='hover:scale-110 transition-transform' /></a>
+            <a href="https://www.linkedin.com/in/igor-duarte-846626270/" target='_blank'><FaLinkedin size={26} color='#8C4A2F' className='hover:scale-110 transition-transform' /></a>
+            <a href="https://api.whatsapp.com/send?phone=31996570938&text=Olá, tudo bom?" target='_blank'><FaWhatsapp size={26} color='#8C4A2F' className='hover:scale-110 transition-transform' /></a>
+            <a href="https://github.com/duarteeigor" target='_blank'><FaGithub size={26} color='#8C4A2F' className='hover:scale-110 transition-transform' /></a>
           </div>
         </div>
 
-        <div className='flex flex-col my-20'>
-          <h1 className='text-center text-2xl font-medium mb-2'>Sobre mim</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores incidunt provident omnis odio facilis! Saepe eveniet nam voluptas molestiae, aperiam quas sequi atque doloribus facilis reprehenderit eligendi quos repellat obcaecati repellendus, deserunt maxime porro magni sit ullam? Inventore saepe nam cum ullam natus repellat, laboriosam ipsam quae fugiat facilis voluptatibus similique nostrum omnis eaque, ipsum corporis quas magni? Reiciendis ullam nam incidunt necessitatibus. Doloremque fugiat deserunt blanditiis dolorum, reiciendis iusto pariatur unde natus architecto voluptatem molestias sit vitae quasi quia facilis harum nihil eum quis tempora dolorem laboriosam. Totam, provident impedit. Officia libero, repellendus magni eum necessitatibus nemo cupiditate non.</p>
-        </div>
+        {/* Sobre mim */}
+        <section className='flex flex-col my-20 max-w-4xl text-center'>
+          <h2 className='text-2xl font-medium mb-4'>Sobre mim</h2>
+          <p className='text-[#8C4A2F]'>
+            Olá! Sou Igor Duarte, desenvolvedor Front-End apaixonado por criar interfaces modernas e funcionais. Tenho experiência com React, TypeScript e Tailwind CSS, sempre buscando aprender novas tecnologias e boas práticas de desenvolvimento. Estou em busca de oportunidades para contribuir em projetos desafiadores e crescer profissionalmente.
+          </p>
+        </section>
 
         <div className='h-px bg-[#8C4A2F] w-full'></div>
 
-        <div className='flex flex-col mb-20'>
-          <h1 className='text-2xl font-medium text-center my-10'>Projetos</h1>
+        <section id='projetos' className='flex flex-col mb-20 w-full'>
+          <h2 className='text-2xl font-medium text-center my-10'>Projetos</h2>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
+            {projetos.map((item, index) => (
+              <Card
+                key={index}
+                img={item.img}
+                name={item.name}
+                description={item.description}
+                link={item.link}
+                tech={item.tech}
+                descriptionModal={item.descriptionModal}
+              />
+            ))}
 
-          <div className='flex gap-8'>
-            <div className='bg-[#F5E6CA] p-6 w-80 overflow-hidden'>
-              <a href="">
-                <img className='w-full h-40 object-cover transform transition-transform duration-300 hover:scale-110' src={ImageCar} alt='' />
-                <span className='text-lg font-medium'>Web-Cars (inspiração webmotors)</span>
-                <p>Tecnologias: React, TypeScript, Tailwind</p>
-              </a>
-            </div>
+
+
           </div>
-        </div>
+        </section>
+
+
 
         <div className='h-px bg-[#8C4A2F] w-full'></div>
 
-        <div>
-          <h1 className='text-2xl font-medium text-center my-10'>Skills</h1>
+        
+        <section className='flex flex-col mb-20 w-full'>
+          <h2 className='text-2xl font-medium text-center my-10'>Skills</h2>
+          <div className='flex flex-wrap justify-center gap-6'>
+            {skills.map((skill, index) => (
+              <div key={index} className='bg-[#F5E6CA] p-6 rounded-xl flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform'>
+                {skill.icon}
+                <h3 className='mt-2 font-medium'>{skill.name}</h3>
+              </div>
+            ))}
+          </div>
+        </section>
 
-          <div className='flex gap-4'>
-            <div className='bg-[#F5E6CA] p-6 flex flex-col items-center justify-center'>
-              <FaReact size={80} color='#8C4A2F' />
-              <h2>React</h2>
-            </div>
+      </main>
 
-            <div className='bg-[#F5E6CA] p-6 flex flex-col items-center justify-center'>
-              <SiTypescript size={80} color='#8C4A2F' />
-              <h2>TypeScript</h2>
-            </div>
-
-            <div className='bg-[#F5E6CA] p-6 flex flex-col items-center justify-center'>
-              <IoLogoJavascript size={80} color='#8C4A2F' />
-              <h2>JavaScript</h2>
-            </div>
-
-            <div className='bg-[#F5E6CA] p-6 flex flex-col items-center justify-center'>
-              <BiLogoPostgresql size={80} color='#8C4A2F' />
-              <h2>Postgres</h2>
-            </div>
-
-            <div className='bg-[#F5E6CA] p-6 flex flex-col items-center justify-center'>
-              <RiTailwindCssFill size={80} color='#8C4A2F' />
-              <h2>Tailwind</h2>
-            </div>
+      {/* Footer */}
+      <footer className='bg-[#8C4A2F] text-[#FAF3E0] w-full py-6 mt-10'>
+        <div className='max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-4'>
+          <p>© {new Date().getFullYear()} Igor Duarte. Todos os direitos reservados.</p>
+          <div className='flex gap-4 mt-4 md:mt-0'>
+            <a href="#"><FaInstagram size={24} /></a>
+            <a href="https://www.linkedin.com/in/igor-duarte-846626270/" target='_blank'><FaLinkedin size={24} /></a>
+            <a href="https://api.whatsapp.com/send?phone=31996570938&text=Olá, tudo bom?" target='_blank'><FaWhatsapp size={24} /></a>
+            <a href="https://github.com/duarteeigor" target='_blank'><FaGithub size={24} /></a>
           </div>
         </div>
-
-
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
