@@ -1,6 +1,7 @@
 import { Header } from './components/Header/Header';
 import Image from "./assets/image.jpeg";
-import ImageWebCars from "./assets/webCars.png"
+import ImageWebCars from "./assets/webCars.png";
+import ImageTasks from "./assets/tarefas.png";
 
 
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub, FaReact } from "react-icons/fa";
@@ -21,6 +22,14 @@ function App() {
       tech: "Vite, TypeScript, Tailwind, Supabase",
       descriptionModal: "O projeto foi inspirado no site Webmotors. Basicamente tem uma página principal onde ficam listados os carros que foram cadastrados no banco de dados, também é possivel criar o seu próprio anúncio ao criar sua conta.Meu objetivo com a criação do site foi  praticar utilizando o supabase para armazenar os dados, autenticação e armazenamento de imagem"
     },
+    {
+      name: "Tarefas",
+      img: ImageTasks,
+      link: "https://dev-tarefas.vercel.app/",
+      description: "Site para você organizar suas tarefas",
+      tech: "Next.js, TypeScript, CSS modules, Supabase",
+      descriptionModal: "Projeto desenvolvido no curso mentorado pelo Matheus Fraga. O projeto funciona como uma lista de tarefas, permitindo que os usuários se autentiquem e gerenciem suas próprias tarefas. Além de também ser possível compartilhar tarefas públicas com demais usuarios, dando-lhes liberdade de fazer comentários."
+    }
   ]
 
   const skills = [
